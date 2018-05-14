@@ -42,7 +42,7 @@
 				<span class="navbar-brand mb-0 h1">InstaRead</span>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="#aboutme">About Me</a></li>
+				<li><a href="https://github.com/rsainaveen" target="_blank">About Me</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -69,14 +69,7 @@
 		</section>
 	</div>
 	<br>
-	<div class="footer-bottom" id="aboutme">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 widget">Created by Naveen with Boostrap
-				</div>
-			</div>
-		</div>
-	</div>
+	<div id="snackbar">Sorry, no results found with the given name.</div>
 	<!-- <script src="//code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>  -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script> 
 	

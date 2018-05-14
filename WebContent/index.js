@@ -17,7 +17,11 @@ $(document).ready(function() {
 			yourName : name
 		}, function(responseText) {
 			response = $.parseJSON(responseText);
-			drawTable(response);
+			if(response.results.length == 0){
+				showToast();
+			} else {
+				drawTable(response);
+			}
 		});
 	}
 	
@@ -29,19 +33,6 @@ $(document).ready(function() {
 	}
 
 	function drawRow(rowData) {
-		/*
-		var row = $("<tr />")
-		$("#BookTable").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
-		row.append($("<td>" + rowData.trackCensoredName + "</td>"));
-		row.append($("<td>" + rowData.trackName + "</td>"));
-		var genres = "";
-		for(var i = 0; i < rowData.genres.length; i++){
-			genres += rowData.genres[i];
-			if(i < rowData.genres.length-1) genres += ";"
-		}
-		row.append($("<td>" + genres + "</td>"));
-		row.append($("<td>" + rowData.price + "</td>"));*/
-		
 		var parent = $(".list-group");
     	var genDiv = "<div class='list-group-item'>\
 					<div class='row'> \
@@ -100,5 +91,10 @@ $(document).ready(function() {
 				</div>";
     	parent.append(genDiv);
 	}
-
+	
+	function showToast() {
+	    var toastbar = $("#snackbar");
+	    toastbar.addClass("show");
+	    setTimeout(function(){ toastbar.removeClass("show"); }, 3000);
+	}
 });
